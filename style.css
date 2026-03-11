@@ -60,11 +60,6 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
-    cursor: none;
-}
-
-@media (max-width: 768px) {
-    body { cursor: auto; }
 }
 
 a {
@@ -84,50 +79,6 @@ ul { list-style: none; }
 .highlight {
     color: var(--accent);
     font-weight: 500;
-}
-
-/* ===== Custom Cursor ===== */
-.custom-cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 10001;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-    mix-blend-mode: difference;
-}
-
-.cursor-follower {
-    width: 36px;
-    height: 36px;
-    border: 1.5px solid rgba(var(--accent-rgb), 0.4);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 10000;
-    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
-                width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
-
-.custom-cursor.hover {
-    transform: scale(3);
-    opacity: 0.5;
-}
-
-.cursor-follower.hover {
-    width: 60px;
-    height: 60px;
-    border-color: rgba(var(--accent-rgb), 0.6);
-}
-
-@media (max-width: 768px) {
-    .custom-cursor, .cursor-follower { display: none; }
 }
 
 /* ===== Glass Card ===== */
@@ -472,7 +423,7 @@ ul { list-style: none; }
     font-size: 0.92rem;
     font-weight: 600;
     font-family: var(--font-main);
-    cursor: none;
+    cursor: pointer;
     transition: all var(--transition);
     display: inline-flex;
     align-items: center;
@@ -626,20 +577,6 @@ ul { list-style: none; }
 
 .section-header-center {
     text-align: center;
-}
-
-.section-tag {
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    display: block;
-    margin-bottom: 8px;
-    opacity: 0.5;
-}
-
-.section-tag-close {
-    margin-top: 40px;
-    opacity: 0.3;
 }
 
 .section-title {
@@ -1095,7 +1032,7 @@ ul { list-style: none; }
     gap: 16px;
     padding: 18px 24px;
     text-align: left;
-    cursor: none;
+    cursor: pointer;
 }
 
 .contact-card:hover {
@@ -1220,7 +1157,7 @@ ul { list-style: none; }
     border-radius: 12px;
     color: var(--accent);
     font-size: 1rem;
-    cursor: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
