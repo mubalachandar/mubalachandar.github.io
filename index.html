@@ -8,33 +8,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">&lt;BM /&gt;</a>
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">{</span>BM<span class="logo-bracket">}</span>
+            </a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#certifications" class="nav-link" data-text="Certs">Certifications</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link nav-link-cta" data-text="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-particles" id="particles"></div>
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
         <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for Opportunities</span>
+            </div>
             <p class="hero-greeting">Hello, I'm</p>
-            <h1 class="hero-name">BALACHANDAR M</h1>
+            <h1 class="hero-name" data-text="BALACHANDAR M">BALACHANDAR M</h1>
             <div class="hero-title-wrapper">
                 <span class="hero-title-prefix">&gt;&nbsp;</span>
                 <span class="hero-title" id="typingText"></span>
@@ -42,22 +58,51 @@
             </div>
             <p class="hero-tagline">Securing cloud infrastructure, one policy at a time.</p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                <a href="#projects" class="btn btn-primary magnetic">
+                    <span class="btn-content">
+                        <i class="fas fa-rocket"></i>
+                        <span>View My Work</span>
+                    </span>
+                    <span class="btn-glow"></span>
+                </a>
+                <a href="#contact" class="btn btn-outline magnetic">
+                    <span class="btn-content">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Get In Touch</span>
+                    </span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">AWS Services</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Certifications Path</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+                    <span class="stat-label">Security Focus</span>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <p>Scroll Down</p>
+            <div class="scroll-line"></div>
+            <p>Scroll</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">01.</span> About Me</h2>
+            <div class="section-header">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -75,40 +120,59 @@
                         to protect cloud resources from misconfigurations and unauthorized access.
                     </p>
                 </div>
-                <div class="about-image">
-                    <div class="terminal-card">
+                <div class="about-visual">
+                    <div class="terminal-card glass-card">
                         <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                            </div>
                             <span class="terminal-title">balachandar@aws:~$</span>
+                            <div class="terminal-actions">
+                                <i class="fas fa-minus"></i>
+                                <i class="fas fa-square"></i>
+                                <i class="fas fa-times"></i>
+                            </div>
                         </div>
                         <div class="terminal-body">
-                            <p><span class="prompt">$</span> cat about.txt</p>
-                            <p class="output">Name: Balachandar M</p>
-                            <p class="output">Role: Cloud Security Engineer</p>
-                            <p class="output">Focus: AWS Security</p>
-                            <p class="output">Mission: Secure the Cloud</p>
-                            <p><span class="prompt">$</span> aws iam get-user</p>
-                            <p class="output">{</p>
-                            <p class="output">&nbsp;&nbsp;"UserName": "balachandar",</p>
-                            <p class="output">&nbsp;&nbsp;"Status": "Active",</p>
-                            <p class="output">&nbsp;&nbsp;"MFA": "Enabled" ✓</p>
-                            <p class="output">}</p>
-                            <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat</span> about.json</div>
+                            <div class="terminal-json">
+                                <p>{</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-value">"Balachandar M"</span>,</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-value">"Cloud Security Engineer"</span>,</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"focus"</span>: <span class="json-value">"AWS Security"</span>,</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"mission"</span>: <span class="json-value">"Secure the Cloud"</span>,</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"mfa"</span>: <span class="json-bool">true</span> <span class="json-check">✓</span></p>
+                                <p>}</p>
+                            </div>
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">aws</span> sts get-caller-identity</div>
+                            <div class="terminal-json">
+                                <p>{</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"Account"</span>: <span class="json-value">"****-secured"</span>,</p>
+                                <p>&nbsp;&nbsp;<span class="json-key">"Arn"</span>: <span class="json-value">"arn:aws:iam::user/balachandar"</span></p>
+                                <p>}</p>
+                            </div>
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <span class="section-tag section-tag-close">&lt;/about&gt;</span>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">02.</span> Skills & Technologies</h2>
+            <div class="section-header">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category glass-card tilt-card">
+                    <div class="skill-card-glow"></div>
                     <div class="skill-category-icon"><i class="fas fa-shield-halved"></i></div>
                     <h3>Cloud Security</h3>
                     <div class="skill-tags">
@@ -120,7 +184,8 @@
                         <span class="skill-tag">Encryption</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category glass-card tilt-card">
+                    <div class="skill-card-glow"></div>
                     <div class="skill-category-icon"><i class="fab fa-aws"></i></div>
                     <h3>AWS Services</h3>
                     <div class="skill-tags">
@@ -132,8 +197,9 @@
                         <span class="skill-tag">CloudWatch</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-category-icon"><i class="fas fa-eye"></i></div>
+                <div class="skill-category glass-card tilt-card">
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-category-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Monitoring & Logging</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">CloudTrail</span>
@@ -143,8 +209,9 @@
                         <span class="skill-tag">Audit Trails</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                <div class="skill-category glass-card tilt-card">
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-category-icon"><i class="fas fa-terminal"></i></div>
                     <h3>Tools & Platforms</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Linux</span>
@@ -155,60 +222,87 @@
                     </div>
                 </div>
             </div>
+            <span class="section-tag section-tag-close">&lt;/skills&gt;</span>
         </div>
     </section>
 
     <!-- Certifications Section -->
     <section class="section certifications" id="certifications">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">03.</span> Certifications</h2>
-            <div class="certs-grid">
-                <div class="cert-card in-progress">
+            <div class="section-header">
+                <span class="section-tag">&lt;certifications&gt;</span>
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certs-timeline">
+                <div class="cert-card glass-card" data-status="in-progress">
+                    <div class="cert-card-border"></div>
                     <div class="cert-badge"><i class="fab fa-aws"></i></div>
                     <div class="cert-info">
                         <h3>AWS Certified Cloud Practitioner</h3>
                         <p class="cert-issuer">Amazon Web Services</p>
-                        <span class="cert-status status-in-progress"><i class="fas fa-spinner"></i> In Progress</span>
                     </div>
+                    <span class="cert-status status-in-progress">
+                        <span class="status-pulse"></span>
+                        In Progress
+                    </span>
                 </div>
-                <div class="cert-card planned">
+                <div class="cert-card glass-card" data-status="planned">
+                    <div class="cert-card-border"></div>
                     <div class="cert-badge"><i class="fab fa-aws"></i></div>
                     <div class="cert-info">
                         <h3>AWS Solutions Architect – Associate</h3>
                         <p class="cert-issuer">Amazon Web Services</p>
-                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
                     </div>
+                    <span class="cert-status status-planned">
+                        <i class="fas fa-calendar-alt"></i>
+                        Planned
+                    </span>
                 </div>
-                <div class="cert-card planned">
+                <div class="cert-card glass-card" data-status="planned">
+                    <div class="cert-card-border"></div>
                     <div class="cert-badge"><i class="fab fa-aws"></i></div>
                     <div class="cert-info">
                         <h3>AWS Certified Security – Specialty</h3>
                         <p class="cert-issuer">Amazon Web Services</p>
-                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
                     </div>
+                    <span class="cert-status status-planned">
+                        <i class="fas fa-calendar-alt"></i>
+                        Planned
+                    </span>
                 </div>
-                <div class="cert-card planned">
+                <div class="cert-card glass-card" data-status="planned">
+                    <div class="cert-card-border"></div>
                     <div class="cert-badge"><i class="fas fa-shield-halved"></i></div>
                     <div class="cert-info">
                         <h3>CompTIA Security+</h3>
                         <p class="cert-issuer">CompTIA</p>
-                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
                     </div>
+                    <span class="cert-status status-planned">
+                        <i class="fas fa-calendar-alt"></i>
+                        Planned
+                    </span>
                 </div>
             </div>
+            <span class="section-tag section-tag-close">&lt;/certifications&gt;</span>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section class="section projects" id="projects">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">04.</span> Projects</h2>
+            <div class="section-header">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card glass-card tilt-card">
+                    <div class="project-card-shine"></div>
                     <div class="project-card-header">
                         <div class="project-icon"><i class="fas fa-user-shield"></i></div>
                         <div class="project-links">
-                            <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="project-link-icon">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
@@ -228,8 +322,8 @@
                     </div>
                 </div>
 
-                <!-- Placeholder for future projects -->
-                <div class="project-card project-card-placeholder">
+                <div class="project-card glass-card project-card-placeholder tilt-card">
+                    <div class="project-card-shine"></div>
                     <div class="project-card-header">
                         <div class="project-icon"><i class="fas fa-plus-circle"></i></div>
                     </div>
@@ -246,43 +340,82 @@
                     </div>
                 </div>
             </div>
+            <span class="section-tag section-tag-close">&lt;/projects&gt;</span>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <h2 class="section-title"><span class="title-number">05.</span> Get In Touch</h2>
+            <div class="section-header section-header-center">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line section-line-center"></div>
+            </div>
             <div class="contact-content">
                 <p class="contact-text">
                     I'm always open to discussing cloud security, new opportunities, and interesting projects. 
                     Feel free to reach out!
                 </p>
                 <div class="contact-links">
-                    <a href="mailto:mu.balachandar@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <span>mu.balachandar@gmail.com</span>
+                    <a href="mailto:mu.balachandar@gmail.com" class="contact-card glass-card magnetic">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">mu.balachandar@gmail.com</span>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/m-balachandar" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/m-balachandar" target="_blank" rel="noopener noreferrer" class="contact-card glass-card magnetic">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-value">m-balachandar</span>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
                     </a>
-                    <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
+                    <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" class="contact-card glass-card magnetic">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">GitHub</span>
+                            <span class="contact-card-value">mubalachandar</span>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
                     </a>
                 </div>
             </div>
+            <span class="section-tag section-tag-close">&lt;/contact&gt;</span>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Designed & Built by <span class="highlight">Balachandar M</span></p>
-            <p class="footer-sub">&copy; 2026 All rights reserved.</p>
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <span class="logo-bracket">{</span>BM<span class="logo-bracket">}</span>
+                </a>
+                <p>Designed & Built by <span class="highlight">Balachandar M</span></p>
+                <div class="footer-socials">
+                    <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/m-balachandar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:mu.balachandar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-sub">&copy; 2026 Balachandar M. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
