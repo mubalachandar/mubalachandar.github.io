@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balachandar M | Cloud Security Engineer</title>
+    <meta name="description" content="Portfolio of Balachandar M — Aspiring Cloud Security Engineer specializing in AWS cloud infrastructure security.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">&lt;BM /&gt;</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">BALACHANDAR M</h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-title-prefix">&gt;&nbsp;</span>
+                <span class="hero-title" id="typingText"></span>
+                <span class="cursor">|</span>
+            </div>
+            <p class="hero-tagline">Securing cloud infrastructure, one policy at a time.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title"><span class="title-number">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am an aspiring <span class="highlight">Cloud Security Engineer</span> focused on securing cloud infrastructure in 
+                        <span class="highlight">Amazon Web Services (AWS)</span>. I am building practical experience in cloud security, 
+                        identity and access management, infrastructure protection, logging, and monitoring through hands-on labs and projects.
+                    </p>
+                    <p>
+                        My work includes managing <span class="highlight">IAM users, groups, roles, and policies</span>, securing EC2 compute instances, 
+                        protecting S3 storage, configuring VPC network security, and monitoring cloud activity using 
+                        <span class="highlight">AWS CloudTrail and CloudWatch</span>.
+                    </p>
+                    <p>
+                        I focus on implementing <span class="highlight">least-privilege access</span>, secure cloud architecture, and continuous monitoring 
+                        to protect cloud resources from misconfigurations and unauthorized access.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">balachandar@aws:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> cat about.txt</p>
+                            <p class="output">Name: Balachandar M</p>
+                            <p class="output">Role: Cloud Security Engineer</p>
+                            <p class="output">Focus: AWS Security</p>
+                            <p class="output">Mission: Secure the Cloud</p>
+                            <p><span class="prompt">$</span> aws iam get-user</p>
+                            <p class="output">{</p>
+                            <p class="output">&nbsp;&nbsp;"UserName": "balachandar",</p>
+                            <p class="output">&nbsp;&nbsp;"Status": "Active",</p>
+                            <p class="output">&nbsp;&nbsp;"MFA": "Enabled" ✓</p>
+                            <p class="output">}</p>
+                            <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title"><span class="title-number">02.</span> Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Cloud Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IAM Policies</span>
+                        <span class="skill-tag">Least Privilege</span>
+                        <span class="skill-tag">MFA</span>
+                        <span class="skill-tag">Security Groups</span>
+                        <span class="skill-tag">NACLs</span>
+                        <span class="skill-tag">Encryption</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-icon"><i class="fab fa-aws"></i></div>
+                    <h3>AWS Services</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IAM</span>
+                        <span class="skill-tag">EC2</span>
+                        <span class="skill-tag">S3</span>
+                        <span class="skill-tag">VPC</span>
+                        <span class="skill-tag">CloudTrail</span>
+                        <span class="skill-tag">CloudWatch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Monitoring & Logging</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CloudTrail</span>
+                        <span class="skill-tag">CloudWatch</span>
+                        <span class="skill-tag">Log Analysis</span>
+                        <span class="skill-tag">Alerts</span>
+                        <span class="skill-tag">Audit Trails</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">AWS CLI</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title"><span class="title-number">03.</span> Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card in-progress">
+                    <div class="cert-badge"><i class="fab fa-aws"></i></div>
+                    <div class="cert-info">
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <span class="cert-status status-in-progress"><i class="fas fa-spinner"></i> In Progress</span>
+                    </div>
+                </div>
+                <div class="cert-card planned">
+                    <div class="cert-badge"><i class="fab fa-aws"></i></div>
+                    <div class="cert-info">
+                        <h3>AWS Solutions Architect – Associate</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
+                    </div>
+                </div>
+                <div class="cert-card planned">
+                    <div class="cert-badge"><i class="fab fa-aws"></i></div>
+                    <div class="cert-info">
+                        <h3>AWS Certified Security – Specialty</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
+                    </div>
+                </div>
+                <div class="cert-card planned">
+                    <div class="cert-badge"><i class="fas fa-shield-halved"></i></div>
+                    <div class="cert-info">
+                        <h3>CompTIA Security+</h3>
+                        <p class="cert-issuer">CompTIA</p>
+                        <span class="cert-status status-planned"><i class="fas fa-calendar"></i> Planned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title"><span class="title-number">04.</span> Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">AWS IAM Access Management Lab</h3>
+                    <p class="project-description">
+                        Created IAM users, groups, roles, and policies to implement least-privilege access 
+                        in a multi-user AWS environment. Configured fine-grained permissions, tested policy 
+                        boundaries, and documented security best practices.
+                    </p>
+                    <div class="project-tech">
+                        <span>AWS IAM</span>
+                        <span>IAM Policies</span>
+                        <span>Roles</span>
+                        <span>Groups</span>
+                        <span>Least Privilege</span>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future projects -->
+                <div class="project-card project-card-placeholder">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-plus-circle"></i></div>
+                    </div>
+                    <h3 class="project-title">More Coming Soon</h3>
+                    <p class="project-description">
+                        I'm continuously building new cloud security projects. Stay tuned for more hands-on 
+                        implementations covering S3 security, VPC hardening, CloudTrail monitoring, and more.
+                    </p>
+                    <div class="project-tech">
+                        <span>S3</span>
+                        <span>VPC</span>
+                        <span>CloudTrail</span>
+                        <span>CloudWatch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title"><span class="title-number">05.</span> Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm always open to discussing cloud security, new opportunities, and interesting projects. 
+                    Feel free to reach out!
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:mu.balachandar@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>mu.balachandar@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/m-balachandar" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/mubalachandar" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <span class="highlight">Balachandar M</span></p>
+            <p class="footer-sub">&copy; 2026 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
